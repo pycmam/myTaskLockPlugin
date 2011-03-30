@@ -1,0 +1,4 @@
+all:
+  my_task_lock:
+    watch: [mailToSMSTask, getMailTask, sfCacheClearTask]
+    lockfile_dir: data
