@@ -59,9 +59,9 @@ class myTaskLockPluginConfiguration extends sfPluginConfiguration
    */
   protected function isNeedLock($name)
   {
-    $watchedTasks = sfConfig::get('app_lock_tasks');
+    $excludeTasks = sfConfig::get('app_lock_tasks_exclude', array());
 
-    return !$watchedTasks || in_array($name, $watchedTasks);
+    return !in_array($name, $excludeTasks);
   }
 
 
